@@ -1,0 +1,36 @@
+
+ng new appName
+
+cd ./appName
+ng serve
+
+
+ng g c componentName
+ng g c componentName --skipTests=true           #--skipTests=true|false
+ng g c path/componentName --skipTests=true      
+
+ng g d directiveName
+ng g s serviceName
+
+
+
+npm i @ngrx/store
+npm i @ngrx/effects
+
+
+
+# npm i @ngrx/store-devtools            # and redux devtools extension
+
+
+
+
+
+------
+
+check:
+
+
+ # lazy loading
+loadChildren route     
+StoreModule.forFeature('name', reducerFunc)
+store.select('name')
