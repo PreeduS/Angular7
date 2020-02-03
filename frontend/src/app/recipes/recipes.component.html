@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="col-md-5">
+    <app-recipe-list (recipeSelected) = "onRecipeSelected($event)"></app-recipe-list>
+  </div>
+  <div class="col-md-7">
+    <app-recipe-detail [recipeSelected] = "recipeSelected" *ngIf="recipeSelected.recipe.name !== undefined"></app-recipe-detail>
+    <div *ngIf="recipeSelected.recipe.name===undefined">No Selection</div>
+  </div>
+</div>

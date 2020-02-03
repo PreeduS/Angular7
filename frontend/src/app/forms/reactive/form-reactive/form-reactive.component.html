@@ -1,0 +1,36 @@
+<form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+  username: <input type="text" name="username" formControlName="username" />
+  <span *ngIf = "!signUpForm.get('username').valid && signUpForm.get('username').touched">Invalid username</span>
+  <br />
+  email: <input type="text" name="email" formControlName="email" />
+  <span *ngIf = "!signUpForm.get('email').valid && signUpForm.get('email').touched">Invalid email</span>
+  <span *ngIf = "signUpForm.get('email').pending && signUpForm.get('email').touched">, pending</span>
+  <br />
+  gender: 
+  <div *ngFor="let gender of genders">
+    <input type="radio" name="gender" formControlName="gender" [value]="gender"/>{{gender}}
+  </div>
+  <br />
+  <br />
+
+  <div formGroupName="passwordGroup">
+    password: <input type="password" name="password" formControlName="password" /> 
+    <span *ngIf = "!signUpForm.get('passwordGroup.password').valid && signUpForm.get('passwordGroup.password').touched">Invalid password</span>
+    <br />
+    password2: <input type="password" name="password2" formControlName="password2" /> 
+    <span *ngIf = "!signUpForm.get('passwordGroup.password2').valid && signUpForm.get('passwordGroup.password2').touched">Invalid password</span>
+    <br />
+  </div>
+  <br />
+  <div formArrayName="hobbies">
+    Hobbies:<br />
+    <input type="button" value="addHobby" (click)="addHobby()" />
+    <div *ngFor="let hobby of signUpForm.get('hobbies').controls; let i = index">
+        <input type="test"  [formControlName]="i" /> 
+    </div>
+  </div>
+  <br />
+  <input type="submit" value="Submit" />
+
+  <span *ngIf="!signUpForm.valid && signUpForm.touched">Please enter valid data</span>
+</form>

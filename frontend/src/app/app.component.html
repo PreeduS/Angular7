@@ -1,0 +1,57 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div *ngIf = "false">
+  <div style="text-align:center">
+    <h1>
+      Welcome to {{ title }}!!!
+    </h1>
+    <br />
+    <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+  </div>
+
+  <app-servers></app-servers>
+</div>
+
+
+<!-- chapter 2-4, 6 -->
+<div *ngIf="false">
+  <app-header (featureSelected) = "navigateTo($event)"></app-header>
+  <div class = "container">
+    <div class = "row">
+      <div class = "col-md-12">
+        <app-recipes *ngIf="feature==='recipe'"></app-recipes>
+        <app-shopping-list *ngIf="feature!=='recipe'"></app-shopping-list>
+      </div>
+    </div>
+</div>
+</div>
+<!-- chapter 2-4, 6 end -->
+
+<!-- chapter 5 -->
+<div #divReference *ngIf="false">
+  <app-cockpit 
+    (svCreated) = "onServerAdded($event, divReference)"
+    (bpCreated) = "onBlueprintAdded($event, cockpitReference)"
+    #cockpitReference
+  ></app-cockpit>
+  <hr #hrReference/>
+  <app-server-element *ngFor="let serverElement of serverElements" [el] = "serverElement">
+    test ng content
+    <div #viewChildDivRef>viewChildDivRef</div>
+    <div #contentChildDivRef>contentChildDivRef</div>
+  </app-server-element>
+</div>
+<!-- chapter 5 end -->
+
+
+<!-- router -->
+<a routerLink = "/" routerLinkActive="active" [routerLinkActiveOptions] = "{exact:true}">Home</a>
+<a routerLink = "/users" routerLinkActive="active" [routerLinkActiveOptions] = "{exact:true}">Users</a>
+<a routerLink = "/form" routerLinkActive="active" [routerLinkActiveOptions] = "{exact:true}">Form</a>
+<hr />
+<router-outlet></router-outlet>
+<!-- end router -->
+
+
+<app-pipes></app-pipes>
+<app-http></app-http>

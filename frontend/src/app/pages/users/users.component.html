@@ -1,0 +1,16 @@
+<p>
+  users works!
+</p>
+<br />
+user id = {{user.id}} <br />
+user idQs = {{user.idQs}} <br />
+user fragment = {{user.fragment}} <br />
+<br /><br />
+<a [routerLink]="['/users',10]">nav</a>
+<br />
+<a [routerLink]="['/users',10]" [queryParams] = "{edit:1}">nav qs</a>
+<br />
+<a [routerLink]="['/users',10]" [fragment] = "'fragmentTest'">nav qs fr</a>
+
+<br /><br /><br />
+<router-outlet></router-outlet>

@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-xs-12">
+   <!-- <form>-->
+      <div class="row">
+        <div class="col-sm-5 form-group">
+          <label for="name">Name</label>
+          <input appHighlight type="text" [(ngModel)]="name" class="form-control">
+        </div>
+        <div class="col-sm-2 form-group">
+          <label for="amount">Amount</label>
+          <input [appHighlight2] = "'orange'" highlightColor = "yellow" type="number" [(ngModel)]="amount" class="form-control">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-cs-12">
+          <button class="btn btn-success" type="submit" (click)="onAddRecipe()">Add</button>
+          <button class="btn btn-danger">Delete</button>
+          <button class="btn btn-primary">Clear</button>
+        </div>
+      </div>
+    <!--</form>-->
+  </div>
+</div>
+
+<div *appCustomIf="true">appCustomIf</div>
+<div [ngSwitch] = "5">
+  <div *ngSwitchCase="1">1</div>
+  <div *ngSwitchCase="2">2</div>
+  <div *ngSwitchDefault>default</div>
+</div>
+<!--
+
+
+  <div *ngIf="">...</div>
+
+  # same:
+
+  <ng-template [ngIf]="">
+    <div>...</div>
+  </ng-template>
+-->

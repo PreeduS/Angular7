@@ -1,0 +1,12 @@
+b { color: dodgerblue; }
+
+.test-class{
+    text-decoration: underline;
+}
+
+.even {
+    background: rgba(250,250,250);
+}
+.odd {
+    background: rgba(245,245,245);
+}

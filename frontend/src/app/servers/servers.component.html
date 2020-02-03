@@ -1,0 +1,40 @@
+<b>{{header}}</b><br />
+{{ true ? getValue(): 'false...'}}
+<br />
+<app-server></app-server>
+<app-server></app-server>
+
+<button [disabled] = "!allowNewServer" >Add</button>
+<div [innerText] = "allowNewServer"></div>
+<button (click) = "toggleState()">Toggle</button>
+
+<br /><br />
+
+<input type = "text" (input) = "onInputChange($event)" /><br />
+inputValue = {{inputValue}}
+
+<br /><br />
+
+<input type = "text" [(ngModel)] = "inputValue2" ><br />
+inputValue2 = {{inputValue2}}
+
+<br /><br />
+
+<div *ngIf = "allowNewServer">allowNewServer</div>
+
+
+<br /><br />
+<div [ngStyle] = "getStyle()">ngStyle</div>
+<div [ngStyle] = "{color:'red'}">ngStyle</div>
+
+<br /><br />
+
+<div [ngClass] = "{'test-class': allowNewServer}">ngClass</div>
+
+<br /><br />
+
+<button (click) = "addServer()">Add server; inputValue2</button>
+
+<div *ngFor = "let server of servers; let i = index">
+    <div [ngClass] = "{even: i % 2 === 0, odd: i % 2 === 1}" >{{server}}, {{i}}</div>
+</div>

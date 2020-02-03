@@ -1,0 +1,28 @@
+<form (ngSubmit)="onSubmit(form)" #form="ngForm">
+  <div>
+    <div>username:</div>
+    <input name="username" required pattern="^[a-zA-Z0-9]+$" minlength = "3" ngModel #name="ngModel"/>
+    <div *ngIf="!name.valid && name.touched">Name is not valid</div>
+  </div>
+  <div>
+    <div>password:</div>
+    <input name="password" ngModel/>
+  </div>
+  <div>
+    <select name="select" [ngModel] = "selectDefault" [(ngModel)] = "select">
+      <option value="1">1</option>
+      <option value="2">2</option>
+    </select>
+    {{select}}
+  </div>
+  <div ngModelGroup="valueGroup">
+      <div>value:</div>
+      <input name="value" required ngModel #value="ngModel"/>
+      <div>value2:</div>
+      <input name="value2" required ngModel #value2="ngModel"/>
+
+    </div>
+
+  <br />
+  <button [disabled] = "!form.valid">Submit</button>
+</form>

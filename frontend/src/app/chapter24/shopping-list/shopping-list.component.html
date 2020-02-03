@@ -1,0 +1,18 @@
+<div>
+  <div (click) = "addIngredient()"> Add Ingredient</div>
+  <br />
+  <div class="row">
+    <div class="col-xs-10">
+      <hr />
+      <ul class="list-group">
+        <div href="#" class="list-group-item" *ngFor="let ingredient of (shoppingListState | async).ingredients; let i = index">
+          {{ingredient.name}} ({{ingredient.amount}})
+          <span (click) = "updateIngredient(i)">edit</span> | 
+          <span (click) = "deleteIngredient(i)">delete</span>
+        </div>
+      </ul>
+    </div>
+    
+  </div>
+
+</div>

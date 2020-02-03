@@ -1,0 +1,30 @@
+<br /><br />
+pipes: <br />
+
+{{ 'Uppercase..' | uppercase }} <br />
+{{ 'Lowercase..' | lowercase }} <br />
+<br />
+{{ 'Fri Oct 18 2019 16:07:42 GMT+0300' }} <br />
+{{ 'Fri Oct 18 2019 16:07:42 GMT+0300' | date }} <br />
+{{ 'Fri Oct 18 2019 16:07:42 GMT+0300' | date:'fullDate' }} <br />
+<br />
+{{ 'abcd' | slice:0:3 | uppercase }} <br />
+{{ 'abcd' | shorten }} <br />
+{{ 'abcd' | shorten:2 }} <br />
+
+
+<br /><br />
+Servers:
+<br />
+
+
+<div *ngFor="let server of servers | filter:filter">
+    {{server.name}} {{server.status}} 
+</div>
+<br />
+<button (click) = "addServer()">Add Server</button>
+<button (click) = "toggleFilter()">Toggle filter</button> {{filter}}
+
+<br />
+appStatus = {{appStatus}} <br />
+appStatus = {{appStatus | async}} <br />
